@@ -1,0 +1,38 @@
+User's Manual:
+
+Welcome to iPark!
+
+iPark is a computer application that will be used by Orange Carpark Inc. for the operations of its carpark business. iPark will be used to record "in and out" of every vehicle that parks in the property. 
+This system maintains two types of vehicle records:
+
+1. current customers - for the vehicles that are currently inside the carpark
+2. historical record - list of vehicles that used the carpark.
+
+This iPark consists of a menu that has different features.
+
+The menu looks like this. First you need to enter a letter that pertains to what you want to do.
+
+a. Add vehicle
+-When you choose this feature,  you need to input all informations about the car such as plate number, vehicle type and vehicle color.
+-When inputting plate number and color, the input should not have a comma.
+
+b. Initiate payment
+-When you choose this feature, you need to input plate number of the car that you want to be paid. Then, it will search the plate number and compute for the total hours consumed and the amount
+to be paid. The car that will be chosen will be put to the text file "history.txt".
+
+c. Remove vehicle
+-When you choose this feature, you need to input plate number of the car that you want to remove. The car that will be removed will be put to the text file "history.txt".
+
+d. View all cars inside
+-When you chose this feature, all cars inside will be displayed.
+
+e. View specific record
+-When you chose this feature, you need to input the specific car you want to display. Then, it will display all the details of the chosen car.
+
+f. Quit    
+-After using the iPark application, do not forget to quit the application. All the data will not be saved in the text file if you do not quit the program.  
+
+We hope that this iPark application will be a great help to you. 
+Thank you!
+
+

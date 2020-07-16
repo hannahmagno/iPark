@@ -1,0 +1,84 @@
+Technical Documentation
+
+Structure:
+    car_list - this structure includes all the data for the cars.
+
+Structure definition:
+typedef struct car_list{
+    char plateNumber[10];
+    char vecType;
+    char strVecType[10];
+    char color[10];
+    long int inTime;
+    char timeIn[20];
+    long int outTime;
+    char timeOut[20];
+    double hour;
+    int pay;
+    struct car_list *next;
+}car;
+
+Functions:
+    int getPayment(car*) - this function will compute and return the amount to be paid of the specific car that is the parameter of the function.
+        This function is used in the procedure void initPayment();.
+  
+Procedures:
+    void printMenu(); - This procedure prints the menu of the program.
+        This procedure is repeated in main until the user opted to quit.
+
+    void getInput(char*); - This procedure have a string as a parameter and then store to that string the user input.
+        This procedure is used in the program everytime there is a need for user input.
+
+    char getLetter(char*); - This procedure will convert the inputted string to the corresponding letter(char) and will return that letter.
+        This procedure is called when there is a need to choose from options such as choosing what to do in  main menu.
+
+    void addVehicle(); - This procedure allocates a memory for the info of the car to be parked and then prompts the user to input the required data of the car to be parked.
+        This procedure is called whenever the user opted to add a new record.
+
+    void viewRecord(); - This procedure prints the records of all the car currently parked.
+        This procedure is called whenever the user opted to view all the records.
+
+    void removeVehicle(); - This procedure will prompt the user to enter a plate number and deletes the record of that car then call void insertHistory(car*);
+        This procedure is called whenever the user opted to delete a specific record.
+
+    void viewSpecific(); - This procedure will prompt the user to enter a plate number and prints the records of the car with the same plate number.
+        This procedure is called whenever the user opted to view a specific record.
+
+    void initPayment(); - This procedure will be like removeVehicle(); however, this procedure includes getPayment();
+        This procedure is called whenever the user opted to initiate payment for a specific car.
+
+    void quit(); - This procedure will write all the data still in the list into "vehicle.txt"
+        This procedure is called when the user opted to quit, vefore the program is terminated.
+
+    void insertHistory(car*); - This procedure will write the data of the deleted car in the list into "history.txt"
+        This procedure will be called  in the functions removeVehicle() and initPayment().
+
+    void load(); - This procedure is used to load all the data inside "vehicle.txt" into a linked list of cars.
+        This procedure is called every start of the program.
+    
+    void getVecType(char str[], char type) - This procedure gets the string equivalent for a, b, and c in vehicle type
+
+Procedures for design:
+
+   void receipt(car *temp) - This procedure displays the official receipt of the car entered.
+
+   void cardesign() - This procedure is a design for the start.
+
+   void header() - This procedure is a design for the header of the menu.
+   
+   void headerViewAll() - This procedure is a design for the header of the view all feature.
+   
+   void quitDesign() - This procedure is a design for the quit feature.
+
+Files:
+    vehicle.txt - this txt file contains the data of all the cars still in the list when the user quits the program
+        Sample format:
+            platenum1,vehicletype1,color1,timein1,numofseconds1
+            platenum2,vehicletype2,color2,timein2,numofseconds2
+            platenum3,vehicletype3,color3,timein3,numofseconds3
+
+    history.txt - this txt file contains the data of all the cars that was already removed from the list of cars
+        Sample format:
+            platenum1, vehicletype1, color1, timein1, timeout1, numofhours1, amountpaid1
+            platenum2, vehicletype2, color2, timein2, timeout2, numofhours2, amountpaid2
+            platenum3, vehicletype3, color3, timein3, timeout3, numofhours3, amountpaid3
